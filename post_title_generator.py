@@ -7,7 +7,7 @@ class PostTitle:
     "Unveiling Our Latest Handcrafted Jewelry Collection",
     "Behind the Scenes: Crafting the Perfect Cup of Artisan Coffee",
     "Explore the Elegance: Introducing our Luxury Leather Bags",
-    "Exclusive Offer Inside! 🎁 Save 20% on Handmade Ceramics Today!",
+    "Exclusive Offer Inside! 🎁 Save 20%% on Handmade Ceramics Today!",
     "Customer Appreciation Day: Enjoy Special Discounts on Your Favorites!",
     "Transform Your Space with Our New Bohemian Home Decor Line!",
     "Dive into Indulgence: Introducing Handcrafted Chocolates",
