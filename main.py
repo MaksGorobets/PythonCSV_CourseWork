@@ -1,25 +1,36 @@
 from csv_generator import *
 from post import Sorter
+from file_manager import FileManager
+from colors import Bcolors
 
 # generator = Generator(20)
 
 # generator.generate("test")
 
 post = Post()
-generator = Generator(0)
+file_manager = FileManager()
 sorter = Sorter()
+colors = Bcolors()
 
-file_input = input("Enter your CSV file name: ")
+file_manager.import_file()
 
-test_l = generator.csv_to_post(file_input)
+while not file_manager.file:
+    file_manager.import_file()
+    opened_file = file_manager.opened_file
+else:
+    while True:
+        show_sort = int(input(f"{colors.WHITE}Do you want to view(1), sort(2), get statistics for your file(3), or pick other file(4)?"))
 
-print("Imported successfully.")
-
-show_sort = int(input("Do you want to view(1) sort(2) or get statistics for your file(3)?"))
-
-if show_sort == 1:
-    sorter.print_list(test_l)
-elif show_sort == 2:
-    sorter.sort(test_l)
-elif show_sort == 3:
-    sorter.show_popular(test_l)
+        if show_sort == 1:
+            sorter.print_list(opened_file)
+        elif show_sort == 2:
+            sorter.sort(opened_file)
+        elif show_sort == 3:
+            sorter.show_popular(opened_file)
+        elif show_sort == 4:
+            file_manager.file = None
+            file_manager.import_file()
+            while not file_manager.file:
+                file_manager.import_file()
+            else:
+                opened_file = file_manager.opened_file

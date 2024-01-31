@@ -21,7 +21,7 @@ class Post:
         return f"{self.post_title}, {self.likes}, {self.comments}, {self.reposts}, {self.profile_visits}"
     
     def print_out(self):
-        return f"{colors.OKCYAN}Post Title: {self.post_title}{colors.OKCYAN}, {colors.OKGREEN}Likes: {self.likes}, {colors.OKBLUE}Comments: {self.comments}, {colors.FAIL}Reposts: {self.reposts}, {colors.WARNING}Profile Visits: {self.profile_visits}"
+        return f"{colors.OKCYAN}Post Title: {self.post_title}, {colors.OKGREEN}Likes: {self.likes}, {colors.OKBLUE}Comments: {self.comments}, {colors.FAIL}Reposts: {self.reposts}, {colors.WARNING}Profile Visits: {self.profile_visits}"
     
 class Sorter:
 
@@ -30,7 +30,7 @@ class Sorter:
         self.impressions = impressions or "0"
 
     def print_out(self):
-        return f"{colors.OKCYAN}Post Title: {self.post_title}{colors.OKCYAN}, {colors.OKGREEN}Impressions: {self.impressions}"
+        return f"{colors.OKCYAN}Post Title: {self.post_title}, {colors.OKGREEN}Impressions: {self.impressions}"
 
     def print_list(self, post_list):
         for item in post_list:
