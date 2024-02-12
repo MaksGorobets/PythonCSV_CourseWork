@@ -1,8 +1,6 @@
 from post import Post
 from colors import Bcolors
 
-colors = Bcolors()
-
 class FileManager:
 
     def __init__(self) -> None:
@@ -10,15 +8,15 @@ class FileManager:
         self.opened_file = []
 
     def import_file(self):
-        file_input = input(f"{colors.WHITE}Enter your CSV file name: ")
+        file_input = input(f"{Bcolors.WHITE}Enter your CSV file name: ")
 
         try:
             with open(f"{file_input}.csv") as opened_file:
                 self.file = opened_file  
-                print(f"{colors.OKGREEN}Imported successfully.")
+                print(f"{Bcolors.OKGREEN}Imported successfully.")
                 self.opened_file = self._csv_to_post()
         except FileNotFoundError:
-            print(f"{colors.WARNING}File \"{file_input}\" does not exist")
+            print(f"{Bcolors.WARNING}File \"{file_input}\" does not exist")
 
     def _csv_to_post(self):
         csv_file = self.file

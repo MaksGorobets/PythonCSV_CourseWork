@@ -1,5 +1,5 @@
-from csv_generator import *
-from post import Sorter
+from Generator.csv_generator import *
+from sorter import Sorter
 from file_manager import FileManager
 from colors import Bcolors
 
@@ -10,16 +10,13 @@ from colors import Bcolors
 post = Post()
 file_manager = FileManager()
 sorter = Sorter()
-colors = Bcolors()
-
-file_manager.import_file()
 
 while not file_manager.file:
     file_manager.import_file()
     opened_file = file_manager.opened_file
 else:
     while True:
-        show_sort = int(input(f"{colors.WHITE}Do you want to view(1), sort(2), get statistics for your file(3), or pick other file(4)?"))
+        show_sort = int(input(f"{Bcolors.WHITE}Do you want to view(1), sort(2), get statistics for your file(3), or pick other file(4)?"))
 
         if show_sort == 1:
             sorter.print_list(opened_file)
