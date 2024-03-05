@@ -1,6 +1,6 @@
 from Generator.csv_generator import *
 from sorter import Sorter
-from file_manager import FileManager
+from csv_reader import CSV_Reader
 from colors import Bcolors
 
 # generator = Generator(20)
@@ -8,12 +8,12 @@ from colors import Bcolors
 # generator.generate("test")
 
 post = Post()
-file_manager = FileManager()
+csv_reader = CSV_Reader()
 sorter = Sorter()
 
-while not file_manager.file:
-    file_manager.import_file()
-    opened_file = file_manager.opened_file
+while not csv_reader.file:
+    csv_reader.import_file()
+    opened_file = csv_reader.opened_file
 else:
     while True:
         show_sort = int(input(f"{Bcolors.WHITE}Do you want to view(1), sort(2), get statistics for your file(3), or pick other file(4)?"))
@@ -25,9 +25,9 @@ else:
         elif show_sort == 3:
             sorter.show_popular(opened_file)
         elif show_sort == 4:
-            file_manager.file = None
-            file_manager.import_file()
-            while not file_manager.file:
-                file_manager.import_file()
+            csv_reader.file = None
+            csv_reader.import_file()
+            while not csv_reader.file:
+                csv_reader.import_file()
             else:
-                opened_file = file_manager.opened_file
+                opened_file = csv_reader.opened_file

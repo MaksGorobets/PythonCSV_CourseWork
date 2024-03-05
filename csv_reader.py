@@ -1,7 +1,7 @@
 from post import Post
 from colors import Bcolors
 
-class FileManager:
+class CSV_Reader:
 
     def __init__(self) -> None:
         self.file = None
